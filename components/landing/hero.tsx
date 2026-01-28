@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "../ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
 const WORDS = [
