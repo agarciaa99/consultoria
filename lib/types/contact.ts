@@ -5,7 +5,7 @@ export interface Contact {
   company: string | null;
   subject: string;
   message: string;
-  status: "new" | "read" | "replied";
+  status: "pending" | "contacted" | "resolved";
   created_at: string;
   responded_at: string | null;
 }
