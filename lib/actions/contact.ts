@@ -91,6 +91,56 @@ export async function getContacts(): Promise<ActionResponse<Contact[]>> {
   }
 }
 
+export async function updateContactStatus(
+  contactId: string,
+  status: Contact["status"],
+): Promise<ActionResponse> {
+  try {
+    const supabase = await createClient();
+
+    const updateData: Record<string, unknown> = { status };
+    if (status === "replied") {
+      updateData.responded_at = new Date().toISOString();
+    }
+
+    const { error } = await supabase
+      .from("contacts")
+      .update(updateData)
+      .eq("id", contactId);
+
+    if (error) {
+      return { success: false, error: "Error al actualizar el estado." };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error:", error);
+    return { success: false, error: "Error inesperado." };
+  }
+}
+
+export async function deleteContact(
+  contactId: string,
+): Promise<ActionResponse> {
+  try {
+    const supabase = await createClient();
+
+    const { error } = await supabase
+      .from("contacts")
+      .delete()
+      .eq("id", contactId);
+
+    if (error) {
+      return { success: false, error: "Error al eliminar el contacto." };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error:", error);
+    return { success: false, error: "Error inesperado." };
+  }
+}
+
 export async function sendReplyToContact(
   contactId: string,
   replyMessage: string,
