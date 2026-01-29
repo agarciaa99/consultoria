@@ -82,13 +82,20 @@ export function Hero() {
             en experiencias digitales
           </h1>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          {/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */}
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Button asChild size={"lg"} className="group">
               <a href="#contact">
                 Comenzar proyecto
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
+            
+            {/* Nuevo botón agregado */}
+            <Button asChild variant={"secondary"} size={"lg"}>
+              <a href="#projects">Ver Proyectos</a>
+            </Button>
+
             <Button asChild variant={"outline"} size={"lg"}>
               <a href="#team">Conócenos</a>
             </Button>
