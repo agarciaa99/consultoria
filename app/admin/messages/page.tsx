@@ -11,8 +11,8 @@ export default async function MessagesPage() {
     .select("*")
     .order("created_at", { ascending: false });
 
-  const unreadMessages = contacts?.filter((c) => c.status === "new") || [];
-  const readMessages = contacts?.filter((c) => c.status !== "new") || [];
+  const unreadMessages = contacts?.filter((c) => c.status === "pending") || [];
+  const readMessages = contacts?.filter((c) => c.status !== "pending") || [];
 
   return (
     <div className="space-y-8">

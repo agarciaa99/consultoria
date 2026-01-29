@@ -93,11 +93,11 @@ export function ContactsTable({ contacts }: { contacts: Contact[] }) {
 
   function getStatusBadge(status: string) {
     switch (status) {
-      case "new":
+      case "pending":
         return <Badge variant="default">Nuevo</Badge>;
-      case "read":
+      case "contacted":
         return <Badge variant="secondary">Leido</Badge>;
-      case "replied":
+      case "resolved":
         return <Badge className="bg-accent text-foreground">Respondido</Badge>;
       default:
         return <Badge variant="outline">{status}</Badge>;
@@ -180,8 +180,8 @@ export function ContactsTable({ contacts }: { contacts: Contact[] }) {
                             <DropdownMenuItem
                               onClick={() => {
                                 setSelectedContact(contact);
-                                if (contact.status === "new") {
-                                  handleUpdateStatus(contact.id, "read");
+                                if (contact.status === "pending") {
+                                  handleUpdateStatus(contact.id, "contacted");
                                 }
                               }}
                             >
@@ -196,7 +196,7 @@ export function ContactsTable({ contacts }: { contacts: Contact[] }) {
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={() =>
-                                handleUpdateStatus(contact.id, "replied")
+                                handleUpdateStatus(contact.id, "resolved")
                               }
                             >
                               <CheckCircle className="h-4 w-4 mr-2" />

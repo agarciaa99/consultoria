@@ -22,7 +22,7 @@ export default async function AdminDashboard() {
   const { count: unreadContacts } = await supabase
     .from("contacts")
     .select("*", { count: "exact", head: true })
-    .eq("status", "new");
+    .eq("status", "pending");
 
   // Get recent contacts
   const { data: recentContacts } = await supabase
