@@ -6,15 +6,14 @@ import { Projects } from "@/components/landing/project";
 import { Contact } from "@/components/landing/contact";
 import { Footer } from "@/components/landing/footer";
 
-
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
       <Team />
-      <Testimonials />
       <Projects />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
