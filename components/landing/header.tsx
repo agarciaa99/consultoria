@@ -57,7 +57,7 @@ export function Header() {
             </Button>
           </div>
 
-          <button
+          <button 
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"

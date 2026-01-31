@@ -50,10 +50,10 @@ export function Hero() {
     const timer = setTimeout(typeText, speed);
     return () => clearTimeout(timer);
   }, [typeText, isDeleting, isPaused]);
-
+  
   return (
-    <section
-      id="hero"
+  <section
+  id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
       <div className="absolute inset-0 -z-10">
