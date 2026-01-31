@@ -52,7 +52,7 @@ export function AdminSidebar({ user }: { user: User }) {
     <>
       {/* Mobile toggle */}
       <button
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-background border border-border rounded-md"
+        className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-background border border-border rounded-md"
         onClick={() => setIsMobileOpen(!isMobileOpen)}
         aria-label="Toggle menu"
       >
@@ -62,6 +62,7 @@ export function AdminSidebar({ user }: { user: User }) {
           <Menu className="h-5 w-5" />
         )}
       </button>
+      
 
       {/* Overlay */}
       {isMobileOpen && (
