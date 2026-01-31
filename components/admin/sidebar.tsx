@@ -34,11 +34,6 @@ const navItems = [
     href: "/admin/messages",
     icon: Mail,
   },
-  {
-    label: "Configuracion",
-    href: "/admin/settings",
-    icon: Settings,
-  },
 ];
 
 export function AdminSidebar({ user }: { user: User }) {
