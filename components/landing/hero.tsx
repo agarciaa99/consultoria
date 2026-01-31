@@ -82,7 +82,8 @@ export function Hero() {
             en experiencias digitales
           </h1>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          {/* AQUÍ ESTÁ EL CAMBIO PRINCIPAL */}
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Button asChild size={"lg"} className="group">
               <a href="#contact">
                 Comenzar proyecto
