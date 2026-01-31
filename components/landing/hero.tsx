@@ -90,12 +90,6 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-            
-            {/* Nuevo botón agregado */}
-            <Button asChild variant={"secondary"} size={"lg"}>
-              <a href="#projects">Ver Proyectos</a>
-            </Button>
-
             <Button asChild variant={"outline"} size={"lg"}>
               <a href="#team">Conócenos</a>
             </Button>
