@@ -37,7 +37,7 @@ export async function submitContact(
       company: data.company || null,
       subject: data.subject,
       message: data.message,
-      status: "new",
+      status: "pending",
     });
 
     if (dbError) {
@@ -99,7 +99,7 @@ export async function updateContactStatus(
     const supabase = await createClient();
 
     const updateData: Record<string, unknown> = { status };
-    if (status === "replied") {
+    if (status === "contacted") {
       updateData.responded_at = new Date().toISOString();
     }
 
@@ -174,7 +174,7 @@ export async function sendReplyToContact(
     const { error: updateError } = await supabase
       .from("contacts")
       .update({
-        status: "replied",
+        status: "contacted",
         responded_at: new Date().toISOString(),
       })
       .eq("id", contactId);
